@@ -10,7 +10,12 @@ services:
       - db
   db:
     image: mongo
+    volumes:
+      - db:/data/db
     ports:
       - "27017:27017"
     env_file:
       - .env.example
+
+volumes:
+  db:
